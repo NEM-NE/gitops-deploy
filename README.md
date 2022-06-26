@@ -1,5 +1,7 @@
 # GitOps boilerplate
 
+[gitops-app로 이동하기](https://github.com/NEM-NE/gitops-app)
+
 ## 소개
 
 K8s 기반 환경에서 GitOps를 쉽게 적용하기 위한 보일러플레이트입니다.
