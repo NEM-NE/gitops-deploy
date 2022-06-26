@@ -1,0 +1,17 @@
+apiVersion: skaffold/v2beta28
+kind: Config
+metadata:
+  name: so-s-poc-nemne-deploy
+build:
+    artifacts:
+    - image: dlatqdlatq/poc-api
+      # skaffold 특성상 dockerhub에서 받아와서 사용할 수 없다. 따라서 application의 Dockerfile 경로를 추가해준다.
+      context: ../so1s-poc-nemne/api
+deploy:
+  kubectl:
+    manifests:
+    - kubernetes-manifests/app.cluster-role.yaml
+    - kubernetes-manifests/app.deployment.yaml
+    - kubernetes-manifests/app.service-account.yaml
+    - kubernetes-manifests/app.service.yaml
+    - kubernetes-manifests/ingress.yaml

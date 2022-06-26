@@ -1,0 +1,14 @@
+# 클러스터롤과 서비스 어카운트의 바인딩
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: api-inference
+subjects:
+- kind: ServiceAccount
+  name: control-inference  # 서비스 어카운트 이름
+  namespace: default    # 네임스페이스 지정은 필수
+roleRef:
+  kind: ClusterRole
+  name: cluster-admin
+  apiGroup: rbac.authorization.k8s.io
+
